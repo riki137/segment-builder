@@ -92,12 +92,9 @@ export default {
   },
   created() {
     if (typeof this.parameter.value === "undefined") {
-      const parameterId = this.parameter.id;
-      const parameterValue = this.parameter.default;
-      this.$store.commit("setParameterValue", {
-        parameterId,
-        parameterValue
-      });
+      this.parameterValue = this.parameter.default;
+    } else {
+      this.parameterValue = this.parameter.value;
     }
   },
   computed: {
